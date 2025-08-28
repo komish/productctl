@@ -1088,6 +1088,14 @@ type ContainerRepository {
   """Marketplace related information."""
   marketplace: ContainerRepositoryMarketplace
 
+  """Catalog Visibility."""
+  catalog_visibility: String
+
+  """
+  Red Hat Org ID / account_id from Red Hat SSO. Also corresponds to company_org_id in Red Hat Connect.
+  """
+  org_id: Int
+
   """MongoDB unique _id"""
   _id: ObjectID
 
@@ -1699,6 +1707,9 @@ type CertificationProject {
 
   """Certification project type."""
   type: String
+
+  """Catalog Visibility."""
+  catalog_visibility: String
 
   """MongoDB unique _id"""
   _id: ObjectID
@@ -2486,6 +2497,7 @@ input CertificationProjectFilter {
   badges_size: IntFilter
   badges: StringListFilter
   type: StringFilter
+  catalog_visibility: StringFilter
   _id: ObjectIDFilter
   creation_date: DateTimeFilter
   last_update_date: DateTimeFilter
@@ -3585,6 +3597,8 @@ input ContainerRepositoryFilter {
   use_latest: BooleanFilter
   vendor_label: StringFilter
   marketplace: ContainerRepositoryMarketplaceFilter
+  catalog_visibility: StringFilter
+  org_id: IntFilter
   _id: ObjectIDFilter
   creation_date: DateTimeFilter
   last_update_date: DateTimeFilter
@@ -5818,6 +5832,14 @@ type ContainerRepositoryFederated {
   """List of products that are part of the product listing."""
   products: [Product]
 
+  """Catalog Visibility."""
+  catalog_visibility: String
+
+  """
+  Red Hat Org ID / account_id from Red Hat SSO. Also corresponds to company_org_id in Red Hat Connect.
+  """
+  org_id: Int
+
   """MongoDB unique _id"""
   _id: ObjectID
 
@@ -6920,6 +6942,9 @@ input CertificationProjectInput {
 
   """Certification project type."""
   type: String
+
+  """Catalog Visibility."""
+  catalog_visibility: String
 
   """MongoDB unique _id"""
   _id: ObjectID
